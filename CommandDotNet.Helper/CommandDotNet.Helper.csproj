@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
+		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
+		<PackageReference Include="CommandDotNet.IoC.MicrosoftDependencyInjection" Version="4.0.1" />
+		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Unity" Version="5.11.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\DIHelper\DIHelper\bin\Release\net6.0\DIHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="CommandDotNet.IoC.Unity">
+			<HintPath>..\..\DIHelper\CommandDotNet.IoC.Unity\bin\Release\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
