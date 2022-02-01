@@ -1,2 +1,2 @@
 # CommandDotNet.Helper
-Integrate CommandDotNet to other subsystems.
+App abstracts with CommandDotNet config.
