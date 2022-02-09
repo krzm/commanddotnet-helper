@@ -18,10 +18,10 @@
 
 	<ItemGroup>
 		<Reference Include="DIHelper">
-			<HintPath>..\..\build\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
 		</Reference>
 		<Reference Include="CommandDotNet.IoC.Unity">
-			<HintPath>..\..\build\Build\di-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
+			<HintPath>..\..\..\Build\di-helper\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 </Project>
