@@ -22,11 +22,11 @@ public abstract class AppProgram<TContainer, TRootCommand>
     {
         Debugger.AttachIfDebugDirective(args);
         var appRunner = SetAppRunner();
-        SetAppRunnerContainer(appRunner);
+        SetDIContainer(appRunner);
         return appRunner.Run(args);
     }
 
-    protected abstract void SetAppRunnerContainer(AppRunner appRunner);
+    protected abstract void SetDIContainer(AppRunner appRunner);
 
     protected virtual AppRunner SetAppRunner()
     {

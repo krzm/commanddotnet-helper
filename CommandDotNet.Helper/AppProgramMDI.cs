@@ -13,7 +13,7 @@ public class AppProgramMDI<TRootCommand>
     {
     }
 
-    protected override void SetAppRunnerContainer(
+    protected override void SetDIContainer(
         AppRunner appRunner)
     {
         var commandClassTypes = appRunner.GetCommandClassTypes();

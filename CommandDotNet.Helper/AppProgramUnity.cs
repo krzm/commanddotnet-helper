@@ -7,22 +7,11 @@ public class AppProgramUnity<TRootCommand>
     : AppProgram<IUnityContainer, TRootCommand>
         where TRootCommand : class
 {
-    public AppProgramUnity(IUnityContainer container) : base(container)
+    public AppProgramUnity(IUnityContainer container) 
+        : base(container)
     {
     }
 
-    protected override void SetAppRunnerContainer(AppRunner appRunner)
-    {
-        RegisterCommandClasses(appRunner);
+    protected override void SetDIContainer(AppRunner appRunner) => 
         appRunner.UseUnityContainer(Container);
-    }
-
-    protected virtual void RegisterCommandClasses(AppRunner appRunner)
-    {
-        var commandClassTypes = appRunner.GetCommandClassTypes();
-        foreach (var type in commandClassTypes)
-        {
-            Container.RegisterSingleton(type.type);
-        }
-    }
 }
