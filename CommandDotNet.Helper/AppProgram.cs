@@ -1,39 +1,42 @@
-﻿using CommandDotNet.DataAnnotations;
-using CommandDotNet.Diagnostics;
-using CommandDotNet.NameCasing;
+﻿using CommandDotNet.NameCasing;
+using CommandDotNet.DataAnnotations;
 using CommandDotNet.Repl;
-using DIHelper;
 
 namespace CommandDotNet.Helper;
 
-public abstract class AppProgram<TContainer, TRootCommand>
-    : IAppProgram
+public abstract class AppProgram<TContainer, TRootCommand> 
+    : AppProgramTemplate<TContainer, TRootCommand, AppRunner>
         where TRootCommand : class
 {
-    protected readonly TContainer Container;
+    private readonly AppRunner appRunner;
 
-    public AppProgram(
-        TContainer container)
+    protected AppRunner AppRunner => appRunner;
+
+    public AppProgram(TContainer container) 
+        : base(container)
     {
-        Container = container;
+        appRunner = new AppRunner<TRootCommand>();
     }
 
-    public int Main(string[] args)
+    protected override void SetAppRunner()
     {
-        Debugger.AttachIfDebugDirective(args);
-        var appRunner = SetAppRunner();
-        SetDIContainer(appRunner);
-        return appRunner.Run(args);
+        var config = SetCommandDotNetConfig();
+        SetDefaults();
+        if(config == null) return;
+        if(config.UseRepl)
+            appRunner.UseRepl();
     }
 
-    protected abstract void SetDIContainer(AppRunner appRunner);
+    protected abstract CommandDotNetSettings? SetCommandDotNetConfig();
 
-    protected virtual AppRunner SetAppRunner()
+    private void SetDefaults()
     {
-        return new AppRunner<TRootCommand>()
+        appRunner
             .UseDefaultMiddleware()
             .UseNameCasing(Case.LowerCase)
-            .UseDataAnnotationValidations()
-            .UseRepl();
+            .UseDataAnnotationValidations();
     }
+
+    protected override int Run(string[] args) => 
+        appRunner.Run(args);
 }

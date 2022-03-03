@@ -6,18 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  	<ItemGroup>
+  <ItemGroup>
 		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
 		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
+		<PackageReference Include="CommandDotNet.IoC.MicrosoftDependencyInjection" Version="4.0.1" />
 		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 	</ItemGroup>
 
-  	<ItemGroup>
-		<Reference Include="DIHelper">
-			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
-		</Reference>
-	</ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
+  </ItemGroup>
 </Project>
