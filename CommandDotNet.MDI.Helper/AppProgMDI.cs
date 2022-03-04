@@ -5,13 +5,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CommandDotNet.MDI.Helper;
 
-public class AppProgramMDI<TRootCommand> 
-    : AppProgramConfiguration<IServiceCollection, TRootCommand>
+public class AppProgMDI<TRootCommand> 
+    : AppProgCmds<IServiceCollection, TRootCommand>
     where TRootCommand : class
 {
     private IServiceProvider? serviceProvider;
 
-    public AppProgramMDI(
+    public AppProgMDI(
         IServiceCollection services) 
             : base(services)
     {
@@ -19,22 +19,17 @@ public class AppProgramMDI<TRootCommand>
 
     protected override void SetDIContainer()
     {
-        var commandClassTypes = AppRunner.GetCommandClassTypes();
-        foreach (var type in commandClassTypes)
-        {
-            Container.AddTransient(type.type);
-        }
-
         serviceProvider = Container.BuildServiceProvider();
         AppRunner.UseMicrosoftDependencyInjection(serviceProvider);
     }
 
+    protected override void RegisterCmd(Type type) =>
+        Container.AddTransient(type);
+
     protected override IConfiguration? ResolveConfig()
     {
-        if(serviceProvider != null)
-        {
-            return serviceProvider.GetService<IConfiguration>();
-        }
-        return default;
+        if(serviceProvider == null) 
+            throw new NullReferenceException(nameof(serviceProvider));
+        return serviceProvider.GetService<IConfiguration>();
     }
 }

@@ -4,15 +4,15 @@ using CommandDotNet.Repl;
 
 namespace CommandDotNet.Helper;
 
-public abstract class AppProgram<TContainer, TRootCommand> 
-    : AppProgramTemplate<TContainer, TRootCommand, AppRunner>
+public abstract class AppProgRunner<TContainer, TRootCommand> 
+    : AppProgConfig<TContainer>
         where TRootCommand : class
 {
     private readonly AppRunner appRunner;
 
     protected AppRunner AppRunner => appRunner;
 
-    public AppProgram(TContainer container) 
+    public AppProgRunner(TContainer container) 
         : base(container)
     {
         appRunner = new AppRunner<TRootCommand>();
@@ -20,14 +20,16 @@ public abstract class AppProgram<TContainer, TRootCommand>
 
     protected override void SetAppRunner()
     {
-        var config = SetCommandDotNetConfig();
         SetDefaults();
-        if(config == null) return;
-        if(config.UseRepl)
+        if(Settings == null) 
+        {
+            //todo: to logs
+            Console.WriteLine("CommandDotNet on default settings");
+            return;
+        }
+        if(Settings.UseRepl)
             appRunner.UseRepl();
     }
-
-    protected abstract CommandDotNetSettings? SetCommandDotNetConfig();
 
     private void SetDefaults()
     {
@@ -36,7 +38,7 @@ public abstract class AppProgram<TContainer, TRootCommand>
             .UseNameCasing(Case.LowerCase)
             .UseDataAnnotationValidations();
     }
-
+    
     protected override int Run(string[] args) => 
         appRunner.Run(args);
 }

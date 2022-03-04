@@ -5,11 +5,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace CommandDotNet.Unity.Helper;
 
-public class AppProgramUnity<TRootCommand> 
-    : AppProgramConfiguration<IUnityContainer, TRootCommand>
+public class AppProgUnity<TRootCommand> 
+    : AppProgCmds<IUnityContainer, TRootCommand>
         where TRootCommand : class
 {
-    public AppProgramUnity(
+    public AppProgUnity(
         IUnityContainer container) 
             : base(container)
     {
@@ -17,6 +17,9 @@ public class AppProgramUnity<TRootCommand>
 
     protected override void SetDIContainer() =>
         AppRunner.UseUnityContainer(Container);
+
+    protected override void RegisterCmd(Type type) =>
+        Container.RegisterType(type);
 
     protected override IConfiguration? ResolveConfig() =>
         Container.Resolve<IConfiguration>();
