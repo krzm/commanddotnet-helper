@@ -10,14 +10,13 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
 {
     private readonly AppRunner appRunner;
 
-    protected AppRunner AppRunner => appRunner;
+    public AppRunner AppRunner => appRunner;
 
-    public AppProgRunner(TContainer container) 
-        : base(container)
+    public AppProgRunner()
     {
         appRunner = new AppRunner<TRootCommand>();
     }
-
+    
     protected override void SetAppRunner()
     {
         SetDefaults();
@@ -36,7 +35,8 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
         appRunner
             .UseDefaultMiddleware()
             .UseNameCasing(Case.LowerCase)
-            .UseDataAnnotationValidations();
+            .UseDataAnnotationValidations()
+            .UseRepl();
     }
     
     protected override int Run(string[] args) => 

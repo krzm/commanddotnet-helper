@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.MDI.Helper", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Helper", "CommandDotNet.Helper\CommandDotNet.Helper.csproj", "{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Helpers.Tests", "CommandDotNet.Helpers.Tests\CommandDotNet.Helpers.Tests.csproj", "{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

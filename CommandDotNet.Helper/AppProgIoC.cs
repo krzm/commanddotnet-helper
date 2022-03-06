@@ -3,11 +3,5 @@
 public abstract class AppProgIoC<TContainer>
     : AppProgTMethod
 {
-    protected readonly TContainer Container;
-
-    public AppProgIoC(
-        TContainer container)
-    {
-        Container = container;
-    }
+    public abstract void SetDIContainer(TContainer container);
 }
