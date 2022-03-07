@@ -7,8 +7,11 @@
   </PropertyGroup>
 
     <ItemGroup>
-	    <ProjectReference Include="..\CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.csproj" />
-	    <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
+    <PackageReference Include="CommandDotNet.TestTools" Version="5.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+	    <ProjectReference Include="..\CommandDotNet.Unity.Helper\CommandDotNet.Unity.Helper.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,5 +19,4 @@
         <HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
       </Reference>
     </ItemGroup>
-
 </Project>

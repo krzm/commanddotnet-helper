@@ -1,3 +1,4 @@
+using CLIHelper;
 using Microsoft.Extensions.Configuration;
 
 namespace CommandDotNet.Helper;
@@ -5,6 +6,12 @@ namespace CommandDotNet.Helper;
 public abstract class AppProgConfig<TContainer>
     : AppProgIoC<TContainer>
 {
+    protected AppProgConfig(
+        IOutput output) 
+            : base(output)
+    {
+    }
+
     public IConfiguration? Configuration { get; set; }
 
     protected CommandDotNetSettings?  Settings { get; set; }

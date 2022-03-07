@@ -1,6 +1,7 @@
 ﻿using CommandDotNet.NameCasing;
 using CommandDotNet.DataAnnotations;
 using CommandDotNet.Repl;
+using CLIHelper;
 
 namespace CommandDotNet.Helper;
 
@@ -12,11 +13,13 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
 
     public AppRunner AppRunner => appRunner;
 
-    public AppProgRunner()
+    protected AppProgRunner(
+        IOutput output) 
+            : base(output)
     {
         appRunner = new AppRunner<TRootCommand>();
     }
-    
+
     protected override void SetAppRunner()
     {
         SetDefaults();

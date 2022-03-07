@@ -14,4 +14,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CLIHelper">
+      <HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

@@ -1,6 +1,4 @@
-using CommandDotNet;
-
-namespace CommandDotNetHelper.Tests;
+namespace CommandDotNet.Helpers.Tests;
 
 [Command("start")]
 public class TestCommand

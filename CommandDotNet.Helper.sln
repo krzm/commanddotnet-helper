@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Unity.Helper", "CommandDotNet.Unity.Helper\CommandDotNet.Unity.Helper.csproj", "{1D83FE82-4359-42A2-A613-B794620F5C32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDotNet.Unity.Helper", "CommandDotNet.Unity.Helper\CommandDotNet.Unity.Helper.csproj", "{1D83FE82-4359-42A2-A613-B794620F5C32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.IoC.Unity", "CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.csproj", "{2018026F-0C36-4D4C-B220-D95039E6B548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDotNet.IoC.Unity", "CommandDotNet.IoC.Unity\CommandDotNet.IoC.Unity.csproj", "{2018026F-0C36-4D4C-B220-D95039E6B548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.MDI.Helper", "CommandDotNet.MDI.Helper\CommandDotNet.MDI.Helper.csproj", "{5A02E824-B866-4988-996C-FB3D4DECB717}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDotNet.MDI.Helper", "CommandDotNet.MDI.Helper\CommandDotNet.MDI.Helper.csproj", "{5A02E824-B866-4988-996C-FB3D4DECB717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Helper", "CommandDotNet.Helper\CommandDotNet.Helper.csproj", "{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDotNet.Helper", "CommandDotNet.Helper\CommandDotNet.Helper.csproj", "{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Helpers.Tests", "CommandDotNet.Helpers.Tests\CommandDotNet.Helpers.Tests.csproj", "{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDotNet.Helpers.Tests", "CommandDotNet.Helpers.Tests\CommandDotNet.Helpers.Tests.csproj", "{D0560E44-6427-4F2E-B8CA-007E0E723328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDotNet.Test.Helper", "CommandDotNet.Test.Helper\CommandDotNet.Test.Helper.csproj", "{1F63809A-C797-4A46-A11E-0029FD0BA3D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,14 @@ Global
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBBB6D6-A35C-4610-AE49-C1376E0B86EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1E2B7C1-A2BD-44B7-AFCC-484F1CD2AF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0560E44-6427-4F2E-B8CA-007E0E723328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0560E44-6427-4F2E-B8CA-007E0E723328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0560E44-6427-4F2E-B8CA-007E0E723328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0560E44-6427-4F2E-B8CA-007E0E723328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F63809A-C797-4A46-A11E-0029FD0BA3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F63809A-C797-4A46-A11E-0029FD0BA3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F63809A-C797-4A46-A11E-0029FD0BA3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F63809A-C797-4A46-A11E-0029FD0BA3D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

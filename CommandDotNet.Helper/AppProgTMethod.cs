@@ -1,20 +1,30 @@
-using DIHelper;
+using CLIHelper;
 
 namespace CommandDotNet.Helper;
 
 public abstract class AppProgTMethod
-//todo: IAppProgram prolly shoudnt be in lib with unity, becouse this Helper shoudnt have unity refs
     : IAppProgram
 {
+    protected readonly IOutput Output;
+
+    protected AppProgTMethod(
+        IOutput output)
+    {
+        Output = output;
+    }
+
     public int Main(string[] args)
     {
         Setup();
+        Output.Log(nameof(Run));
         return Run(args);
     }
 
     private void Setup()
     {
+        Output.Log(nameof(SetConfig));
         SetConfig();
+        Output.Log(nameof(SetAppRunner));
         SetAppRunner();
     }
 
