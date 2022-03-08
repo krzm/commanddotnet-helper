@@ -15,6 +15,7 @@ public abstract class AppProgTMethod
 
     public int Main(string[] args)
     {
+        Output.Log(nameof(Main));
         Setup();
         Output.Log(nameof(Run));
         return Run(args);

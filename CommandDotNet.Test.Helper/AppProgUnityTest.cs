@@ -17,7 +17,9 @@ public class AppProgUnityTest<TRootCommand>
 
     protected override int Run(string[] args)
     {
+        Output.Log("Run in test mode");
         AppRunnerResult = AppRunner.RunInMem(args);
+        Output.Log(AppRunnerResult.Console.AllText());
         return AppRunnerResult.ExitCode;
     }
 }

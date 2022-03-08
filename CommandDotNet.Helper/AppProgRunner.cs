@@ -18,6 +18,7 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
             : base(output)
     {
         appRunner = new AppRunner<TRootCommand>();
+        Output.Log("AppRunner created");
     }
 
     protected override void SetAppRunner()
@@ -25,12 +26,15 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
         SetDefaults();
         if(Settings == null) 
         {
-            //todo: to logs
-            Console.WriteLine("CommandDotNet on default settings");
+            appRunner.UseRepl();
+            Output.Log("AppRunner on default settings");
             return;
         }
         if(Settings.UseRepl)
+        {
             appRunner.UseRepl();
+            Output.Log("REPL mode on");
+        }
     }
 
     private void SetDefaults()
@@ -38,8 +42,7 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
         appRunner
             .UseDefaultMiddleware()
             .UseNameCasing(Case.LowerCase)
-            .UseDataAnnotationValidations()
-            .UseRepl();
+            .UseDataAnnotationValidations();
     }
     
     protected override int Run(string[] args) => 

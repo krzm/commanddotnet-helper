@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
     <ProjectReference Include="..\CommandDotNet.Test.Helper\CommandDotNet.Test.Helper.csproj" />
   </ItemGroup>
 

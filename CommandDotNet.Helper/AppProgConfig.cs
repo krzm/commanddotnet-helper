@@ -25,14 +25,20 @@ public abstract class AppProgConfig<TContainer>
     {
         try
         {
+            ArgumentNullException.ThrowIfNull(Configuration);
             return Configuration
                 .GetRequiredSection("CommandDotNetSettings")
                     .Get<CommandDotNetSettings>();
         }
+        catch (ArgumentNullException anex)
+        {
+            if(anex.ParamName == nameof(Configuration))
+                Output.Log("App Configuration dependency not registered");
+        }
         catch (Exception ex)
         {
-            Console.WriteLine($"Exception: {ex}");
-            return default;
+            Output.Log(ex.Message);
         }
+        return default;
     }
 }
