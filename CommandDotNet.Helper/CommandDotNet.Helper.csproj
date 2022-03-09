@@ -10,8 +10,8 @@
 		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
 		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
 		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<!-- <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" /> -->
+		<!-- <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" /> -->
 	</ItemGroup>
 
 	<!--Debug refs-->
@@ -19,12 +19,18 @@
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
 		</Reference>
+		<Reference Include="Config.Wrapper">
+			<HintPath>..\..\config\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
+		</Reference>
 	</ItemGroup> 
 
 	<!--Realese refs-->
   	<!--<ItemGroup>
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="Config.Wrapper">
+			<HintPath>..\..\..\Build\config\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>-->
 

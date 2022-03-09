@@ -1,5 +1,5 @@
 using CLIHelper;
-using Microsoft.Extensions.Configuration;
+using Config.Wrapper;
 
 namespace CommandDotNet.Helper;
 
@@ -12,33 +12,21 @@ public abstract class AppProgConfig<TContainer>
     {
     }
 
-    public IConfiguration? Configuration { get; set; }
+    public IConfigWrapper? Config { get; set; }
 
     protected CommandDotNetSettings?  Settings { get; set; }
 
     protected override void SetConfig()
     {
-        Settings = SetCommandDotNetConfig();
-    }
-
-    private CommandDotNetSettings? SetCommandDotNetConfig()
-    {
         try
         {
-            ArgumentNullException.ThrowIfNull(Configuration);
-            return Configuration
-                .GetRequiredSection("CommandDotNetSettings")
-                    .Get<CommandDotNetSettings>();
+            ArgumentNullException.ThrowIfNull(Config);
+            Settings = Config.GetConfigSection<CommandDotNetSettings>(nameof(CommandDotNetSettings));
         }
         catch (ArgumentNullException anex)
         {
-            if(anex.ParamName == nameof(Configuration))
-                Output.Log("App Configuration dependency not registered");
+            if (anex.ParamName == nameof(Config))
+                Output.Log("App Config dependency not registered");
         }
-        catch (Exception ex)
-        {
-            Output.Log(ex.Message);
-        }
-        return default;
     }
 }
