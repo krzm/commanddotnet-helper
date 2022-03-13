@@ -1,7 +1,8 @@
 ﻿using CommandDotNet.NameCasing;
 using CommandDotNet.DataAnnotations;
 using CommandDotNet.Repl;
-using CLIHelper;
+using Serilog;
+using Config.Wrapper;
 
 namespace CommandDotNet.Helper;
 
@@ -14,11 +15,12 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
     public AppRunner AppRunner => appRunner;
 
     protected AppProgRunner(
-        IOutput output) 
-            : base(output)
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
     {
         appRunner = new AppRunner<TRootCommand>();
-        Output.Log("AppRunner created");
+        Log.Verbose("AppRunner created");
     }
 
     protected override void SetAppRunner()
@@ -27,13 +29,13 @@ public abstract class AppProgRunner<TContainer, TRootCommand>
         if(Settings == null) 
         {
             appRunner.UseRepl();
-            Output.Log("AppRunner on default settings");
+            Log.Verbose("AppRunner on default settings");
             return;
         }
         if(Settings.UseRepl)
         {
             appRunner.UseRepl();
-            Output.Log("REPL mode on");
+            Log.Verbose("REPL mode on");
         }
     }
 

@@ -1,18 +1,21 @@
-using CLIHelper;
 using Config.Wrapper;
+using Serilog;
 
 namespace CommandDotNet.Helper;
 
 public abstract class AppProgConfig<TContainer>
     : AppProgIoC<TContainer>
 {
-    protected AppProgConfig(
-        IOutput output) 
-            : base(output)
-    {
-    }
+    private readonly IConfigReader config;
 
-    public IConfigWrapper? Config { get; set; }
+    protected AppProgConfig(
+        ILogger log
+        , IConfigReader config) 
+            : base(log)
+    {
+        this.config = config;
+        ArgumentNullException.ThrowIfNull(this.config);
+    }
 
     protected CommandDotNetSettings?  Settings { get; set; }
 
@@ -20,13 +23,11 @@ public abstract class AppProgConfig<TContainer>
     {
         try
         {
-            ArgumentNullException.ThrowIfNull(Config);
-            Settings = Config.GetConfigSection<CommandDotNetSettings>(nameof(CommandDotNetSettings));
+            Settings = config.GetConfigSection<CommandDotNetSettings>(nameof(CommandDotNetSettings));
         }
-        catch (ArgumentNullException anex)
+        catch (Exception ex)
         {
-            if (anex.ParamName == nameof(Config))
-                Output.Log("App Config dependency not registered");
+            Log.Error(ex, "Config error");
         }
     }
 }

@@ -1,31 +1,31 @@
 using CLIHelper;
+using Serilog;
 
 namespace CommandDotNet.Helper;
 
 public abstract class AppProgTMethod
-    : IAppProgram
+    : AppProgLogger 
+    , IAppProgram
 {
-    protected readonly IOutput Output;
-
     protected AppProgTMethod(
-        IOutput output)
-    {
-        Output = output;
+        ILogger log)
+        : base(log)
+    { 
     }
 
     public int Main(string[] args)
     {
-        Output.Log(nameof(Main));
+        Log.Verbose(nameof(Main));
         Setup();
-        Output.Log(nameof(Run));
+        Log.Verbose(nameof(Run));
         return Run(args);
     }
 
     private void Setup()
     {
-        Output.Log(nameof(SetConfig));
+        Log.Verbose(nameof(SetConfig));
         SetConfig();
-        Output.Log(nameof(SetAppRunner));
+        Log.Verbose(nameof(SetAppRunner));
         SetAppRunner();
     }
 

@@ -34,6 +34,9 @@
     <Reference Include="Config.Wrapper">
 			<HintPath>..\..\config\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
+    <Reference Include="Serilog.Wrapper">
+			<HintPath>..\..\serilog-wrapper\Serilog.Wrapper\bin\Debug\net6.0\Serilog.Wrapper.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 	<!--Realese refs-->

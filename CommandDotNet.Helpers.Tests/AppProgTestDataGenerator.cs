@@ -11,7 +11,7 @@ public class AppProgTestDataGenerator
             SetOutput(new AppProgTestData 
             {
                 SetDIContainer = false
-                , SetConfig = false
+                , ConfigOk = false
                 , UseRepl = false
                 , RunMain = false
             })
@@ -22,7 +22,7 @@ public class AppProgTestDataGenerator
             SetOutput(new AppProgTestData 
             {
                 SetDIContainer = false
-                , SetConfig = false
+                , ConfigOk = false
                 , UseRepl = false
                 , RunMain = true
             })
@@ -33,7 +33,7 @@ public class AppProgTestDataGenerator
             SetOutput(new AppProgTestData 
             {
                 SetDIContainer = true
-                , SetConfig = false
+                , ConfigOk = false
                 , UseRepl = false
                 , RunMain = true
             })
@@ -44,7 +44,7 @@ public class AppProgTestDataGenerator
             SetOutput(new AppProgTestData 
             {
                 SetDIContainer = true
-                , SetConfig = true
+                , ConfigOk = true
                 , UseRepl = false
                 , RunMain = true   
             })
@@ -55,7 +55,7 @@ public class AppProgTestDataGenerator
             SetOutput(new AppProgTestData 
             {
                 SetDIContainer = true
-                , SetConfig = true
+                , ConfigOk = true
                 , UseRepl = true
                 , RunMain = true    
             })
@@ -66,22 +66,20 @@ public class AppProgTestDataGenerator
         AppProgTestData data)
     {
         var l = new List<string>();
-            l.Add("--> AppRunner created");
+            l.Add("AppRunner created");
         if(data.SetDIContainer)
-            l.Add("--> UnityContainer set in AppRunner");
+            l.Add("UnityContainer set in AppRunner");
         if(data.RunMain)
         {
-            l.Add("--> Main");
-            l.Add("--> SetConfig");
-            if (data.SetConfig == false)
-                l.Add("--> App Config dependency not registered");
-            l.Add("--> SetAppRunner");
-            if (data.SetConfig == false)
-                l.Add("--> AppRunner on default settings");
-            if (data.SetConfig && data.UseRepl)
-                l.Add("--> REPL mode on");
-            l.Add("--> Run");
-            l.Add("--> Run in test mode");
+            l.Add("Main");
+            l.Add("SetConfig");
+            l.Add("SetAppRunner");
+            if (data.ConfigOk == false)
+                l.Add("AppRunner on default settings");
+            if (data.ConfigOk && data.UseRepl)
+                l.Add("REPL mode on");
+            l.Add("Run");
+            l.Add("Run in test mode");
             GetCommandDotNetDefaultText(l);
         }
         l.Add("");
@@ -91,7 +89,7 @@ public class AppProgTestDataGenerator
 
     private static void GetCommandDotNetDefaultText(List<string> l)
     {
-        l.Add("--> Usage: testhost.exe [options]");
+        l.Add("Usage: testhost.exe [options]");
         l.Add("");
         l.Add("Options:");
         l.Add("");

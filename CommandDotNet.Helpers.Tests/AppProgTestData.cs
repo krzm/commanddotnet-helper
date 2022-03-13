@@ -4,7 +4,7 @@ public class AppProgTestData
 {
     public bool SetDIContainer { get; set; }
 
-    public bool SetConfig { get; set; }
+    public bool ConfigOk { get; set; }
 
     public bool UseRepl { get; set; }
 

@@ -1,9 +1,9 @@
 using System;
-using CLIHelper;
 using CommandDotNet.Helper;
 using CommandDotNet.Unity.Helper;
 using Config.Wrapper;
 using Moq;
+using Serilog.Wrapper;
 using Unity;
 using Xunit;
 
@@ -18,34 +18,33 @@ public class AppProgTests
     public void Test_AppProg_Output_On_SetConfig(
         AppProgTestData data)
     {
-        var mockOut = GetMockOut();
+        var logMock = new LoggerMock();
+        var configMock = SetupConfigMock(data.ConfigOk, data.UseRepl);
         var sut = new AppProgUnityTest<TestCommand>(
-            mockOut);
+            logMock
+            , configMock.Object);
 
         if(data.SetDIContainer) 
             sut.SetDIContainer(new Mock<IUnityContainer>().Object);
-        if(data.SetConfig) 
-            sut.Config = SetupConfigMock(data.UseRepl).Object;
         if(data.RunMain) 
             sut.Main(Array.Empty<string>());
 
-        Assert.Equal(data.ExpectedOutput, mockOut.Lines);
+        Assert.Equal(data.ExpectedOutput, logMock.Lines);
     }
 
-    private static IMockOut GetMockOut() =>
-        new MockOut();
-
-    private static Mock<IConfigWrapper> SetupConfigMock(
-        bool useRepl)
+    private static Mock<IConfigReader> SetupConfigMock(
+        bool configOk
+        , bool useRepl)
     {
-        var configMock = new Mock<IConfigWrapper>();
+        var configMock = new Mock<IConfigReader>();
         configMock.Setup(c =>
             c.GetConfigSection<CommandDotNetSettings>(
                 nameof(CommandDotNetSettings)))
-                    .Returns(new CommandDotNetSettings
+                    .Returns(
+                        configOk ? new CommandDotNetSettings
                         {
                             UseRepl = useRepl
-                        });
+                        } : null);
         return configMock;
     }
 }

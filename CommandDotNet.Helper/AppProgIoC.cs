@@ -1,4 +1,4 @@
-﻿using CLIHelper;
+﻿using Serilog;
 
 namespace CommandDotNet.Helper;
 
@@ -6,8 +6,8 @@ public abstract class AppProgIoC<TContainer>
     : AppProgTMethod
 {
     protected AppProgIoC(
-        IOutput output) 
-            : base(output)
+        ILogger log) 
+            : base(log)
     {
     }
 

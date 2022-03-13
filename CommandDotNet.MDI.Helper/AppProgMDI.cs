@@ -1,7 +1,8 @@
-﻿using CLIHelper;
-using CommandDotNet.Helper;
+﻿using CommandDotNet.Helper;
 using CommandDotNet.IoC.MicrosoftDependencyInjection;
+using Config.Wrapper;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace CommandDotNet.MDI.Helper;
 
@@ -10,8 +11,9 @@ public class AppProgMDI<TRootCommand>
         where TRootCommand : class
 {
     public AppProgMDI(
-        IOutput output) 
-            : base(output)
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
     {
     }
 

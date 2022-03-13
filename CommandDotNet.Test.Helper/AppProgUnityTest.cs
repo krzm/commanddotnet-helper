@@ -1,5 +1,6 @@
-﻿using CLIHelper;
-using CommandDotNet.TestTools;
+﻿using CommandDotNet.TestTools;
+using Config.Wrapper;
+using Serilog;
 
 namespace CommandDotNet.Unity.Helper;
 
@@ -8,8 +9,9 @@ public class AppProgUnityTest<TRootCommand>
         where TRootCommand : class
 {
     public AppProgUnityTest(
-        IOutput output) 
-            : base(output)
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
     {
     }
 
@@ -17,9 +19,9 @@ public class AppProgUnityTest<TRootCommand>
 
     protected override int Run(string[] args)
     {
-        Output.Log("Run in test mode");
+        Log.Information("Run in test mode");
         AppRunnerResult = AppRunner.RunInMem(args);
-        Output.Log(AppRunnerResult.Console.AllText());
+        Log.Information(AppRunnerResult.Console.AllText());
         return AppRunnerResult.ExitCode;
     }
 }
