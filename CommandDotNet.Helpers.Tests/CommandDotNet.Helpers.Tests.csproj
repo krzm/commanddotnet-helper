@@ -32,7 +32,7 @@
 			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
 		</Reference>
     <Reference Include="Config.Wrapper">
-			<HintPath>..\..\config\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
+			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
     <Reference Include="Serilog.Wrapper">
 			<HintPath>..\..\serilog-wrapper\Serilog.Wrapper\bin\Debug\net6.0\Serilog.Wrapper.dll</HintPath>
@@ -45,7 +45,7 @@
 			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
 		</Reference>
     <Reference Include="Config.Wrapper">
-			<HintPath>..\..\..\Build\config\Config.Wrapper\Config.Wrapper.dll</HintPath>
+			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>-->
 </Project>

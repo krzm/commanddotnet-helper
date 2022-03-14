@@ -17,14 +17,14 @@
     <!--Debug refs-->
     <ItemGroup>
       <Reference Include="Config.Wrapper">
-        <HintPath>..\..\config\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
+        <HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
       </Reference>
     </ItemGroup> 
 
   	<!--Realese refs-->
   	<!--<ItemGroup>
       <Reference Include="Config.Wrapper">
-        <HintPath>..\..\..\Build\config\Config.Wrapper\Config.Wrapper.dll</HintPath>
+        <HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
       </Reference>
 	  </ItemGroup>-->
 </Project>
