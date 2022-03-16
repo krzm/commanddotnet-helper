@@ -1,4 +1,4 @@
-using CLIHelper;
+using DIHelper;
 using Serilog;
 
 namespace CommandDotNet.Helper;
