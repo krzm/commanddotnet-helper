@@ -26,7 +26,6 @@
     <ProjectReference Include="..\CommandDotNet.Test.Helper\CommandDotNet.Test.Helper.csproj" />
   </ItemGroup>
 
-	<!--Debug refs-->
 	<ItemGroup>
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
@@ -38,14 +37,5 @@
 			<HintPath>..\..\serilog-wrapper\Serilog.Wrapper\bin\Debug\net6.0\Serilog.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-
-	<!--Realese refs-->
-	<!--<ItemGroup>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
-		</Reference>
-    <Reference Include="Config.Wrapper">
-			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
-		</Reference>
-	</ItemGroup>-->
+  
 </Project>
