@@ -15,17 +15,17 @@
     <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
   </ItemGroup>
 
-  <!--Debug refs-->
-	<ItemGroup>
+  	<!--Debug refs-->
+	<!-- <ItemGroup>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
-	</ItemGroup> 
+	</ItemGroup>  -->
 
 	<!--Realese refs-->
-  	<!--<ItemGroup>
+  	<ItemGroup>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
-	</ItemGroup>-->
+	</ItemGroup>
 </Project>

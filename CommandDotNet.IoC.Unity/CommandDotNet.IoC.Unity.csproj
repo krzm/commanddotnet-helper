@@ -8,9 +8,7 @@
 
   <ItemGroup>
 		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
-	</ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Unity" Version="5.11.10" />
-  </ItemGroup>
+	</ItemGroup>
+  
 </Project>

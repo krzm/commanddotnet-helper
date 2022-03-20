@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <!--Debug refs-->
-    <ItemGroup>
+    <!-- <ItemGroup>
       <Reference Include="CLIHelper">
         <HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
       </Reference>
@@ -22,18 +22,18 @@
       <Reference Include="Config.Wrapper">
         <HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
       </Reference>
-    </ItemGroup> 
+    </ItemGroup>  -->
 
 	  <!--Release refs-->
   	<ItemGroup>
-      <!-- <Reference Include="CLIHelper">
+      <Reference Include="CLIHelper">
 			  <HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
 		  </Reference> -->
-      <!-- <Reference Include="DIHelper">
+      <Reference Include="DIHelper">
         <HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
-      </Reference> -->
-      <!-- <Reference Include="Config.Wrapper">
+      </Reference>
+      <Reference Include="Config.Wrapper">
         <HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
-      </Reference> -->
+      </Reference>
 	  </ItemGroup>
 </Project>
