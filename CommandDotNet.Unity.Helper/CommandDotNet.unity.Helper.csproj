@@ -13,6 +13,10 @@
 
     <!--Debug refs-->
     <!-- <ItemGroup>
+      <Reference Include="CommandDotNet">
+			  <HintPath>..\..\commanddotnet\CommandDotNet\bin\Debug\net5.0\CommandDotNet.dll</HintPath>
+		  </Reference>
+
       <Reference Include="CLIHelper">
         <HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
       </Reference>

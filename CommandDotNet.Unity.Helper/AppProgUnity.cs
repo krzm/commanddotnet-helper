@@ -17,9 +17,19 @@ public class AppProgUnity<TRootCommand>
     {
     }
 
-    public override void SetDIContainer(IUnityContainer container)
+    public void SetDIContainer(IUnityContainer container)
     {
         Log.Verbose("UnityContainer set in AppRunner");
         AppRunner.UseUnityContainer(container);
+    }
+
+    public virtual void RegisterCommandClasses(
+        IUnityContainer container)
+    {
+        var commandClassTypes = AppRunner.GetCommandClassTypes();
+        foreach (var type in commandClassTypes)
+        {
+            container.RegisterSingleton(type.type);
+        }
     }
 }

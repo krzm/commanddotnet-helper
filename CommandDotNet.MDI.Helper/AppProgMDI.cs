@@ -17,9 +17,10 @@ public class AppProgMDI<TRootCommand>
     {
     }
 
-    public override void SetDIContainer(IServiceCollection container)
+    public void SetDIContainer(
+        IServiceProvider serviceProvider)
     {
-        var serviceProvider = container.BuildServiceProvider();
-        AppRunner.UseMicrosoftDependencyInjection(serviceProvider);
+        AppRunner.UseMicrosoftDependencyInjection(
+            serviceProvider);
     }
 }

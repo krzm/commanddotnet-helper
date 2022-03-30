@@ -20,6 +20,7 @@ public class AppProgSet<TAppProg>
     {
         Container.RegisterSingleton<IAppProgram, TAppProg>();
         var appProg = (AppProgUnity<TAppProg>)Container.Resolve<IAppProgram>();
+        appProg.RegisterCommandClasses(Container);
         appProg.SetDIContainer(Container);
     }
 }

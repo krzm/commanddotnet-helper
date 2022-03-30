@@ -10,6 +10,4 @@ public abstract class AppProgIoC<TContainer>
             : base(log)
     {
     }
-
-    public abstract void SetDIContainer(TContainer container);
 }
