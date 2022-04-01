@@ -15,7 +15,7 @@
 		<ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
 	</ItemGroup>
 
-  	<!--Debug refs-->
+	<!--CommandDotNet Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="CommandDotNet">
 			<HintPath>..\..\commanddotnet\CommandDotNet\bin\Debug\net5.0\CommandDotNet.dll</HintPath>
@@ -23,22 +23,25 @@
 		<Reference Include="CommandDotNet.IoC.MicrosoftDependencyInjection">
 			<HintPath>..\..\commanddotnet\CommandDotNet.IoC.MicrosoftDependencyInjection\bin\Debug\net5.0\CommandDotNet.IoC.MicrosoftDependencyInjection.dll</HintPath>
 		</Reference>
+	</ItemGroup>  -->
 
-		<Reference Include="Config.Wrapper">
-			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
-		</Reference>
+  	<!--Debug refs-->
+	<!-- <ItemGroup>
 		<Reference Include="DIHelper">
         	<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
       	</Reference>
+		<Reference Include="Config.Wrapper">
+			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
+		</Reference>
 	</ItemGroup>  -->
 
 	<!--Realese refs-->
   	<ItemGroup>
+	  	<Reference Include="DIHelper">
+        	<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+      	</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
-		<Reference Include="DIHelper">
-        	<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
-      </Reference>
 	</ItemGroup>
 </Project>
