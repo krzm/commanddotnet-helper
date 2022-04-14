@@ -10,6 +10,8 @@ public class AppProgUnity<TRootCommand>
     : AppProgRunner<IUnityContainer, TRootCommand>
         where TRootCommand : class
 {
+    public Type[]? MannuallyRegisterCmds { get; set; }
+
     public AppProgUnity(
         ILogger log
         , IConfigReader config) 
@@ -29,6 +31,8 @@ public class AppProgUnity<TRootCommand>
         var commandClassTypes = AppRunner.GetCommandClassTypes();
         foreach (var type in commandClassTypes)
         {
+            var skipCmd = MannuallyRegisterCmds?.FirstOrDefault(c => c == type.type);
+            if (skipCmd != null) continue;
             container.RegisterSingleton(type.type);
         }
     }
