@@ -26,6 +26,7 @@ public class AppProgTests
 
         if(data.SetDIContainer) 
             sut.SetDIContainer(new Mock<IUnityContainer>().Object);
+        sut.Setup();
         if(data.RunMain) 
             sut.Main(Array.Empty<string>());
 

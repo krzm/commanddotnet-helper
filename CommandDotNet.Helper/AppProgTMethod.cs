@@ -16,12 +16,11 @@ public abstract class AppProgTMethod
     public int Main(string[] args)
     {
         Log.Verbose(nameof(Main));
-        Setup();
         Log.Verbose(nameof(Run));
         return Run(args);
     }
 
-    private void Setup()
+    public void Setup()
     {
         Log.Verbose(nameof(SetConfig));
         SetConfig();

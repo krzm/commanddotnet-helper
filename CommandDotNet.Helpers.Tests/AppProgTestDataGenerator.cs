@@ -66,18 +66,13 @@ public class AppProgTestDataGenerator
         AppProgTestData data)
     {
         var l = new List<string>();
-            l.Add("AppRunner created");
-        if(data.SetDIContainer)
+        l.Add("AppRunner created");
+        if (data.SetDIContainer)
             l.Add("UnityContainer set in AppRunner");
-        if(data.RunMain)
+        AddSetupMethod(data, l);
+        if (data.RunMain)
         {
             l.Add("Main");
-            l.Add("SetConfig");
-            l.Add("SetAppRunner");
-            if (data.ConfigOk == false)
-                l.Add("AppRunner on default settings");
-            if (data.ConfigOk && data.UseRepl)
-                l.Add("REPL mode on");
             l.Add("Run");
             l.Add("Run in test mode");
             GetCommandDotNetDefaultText(l);
@@ -85,6 +80,16 @@ public class AppProgTestDataGenerator
         l.Add("");
         data.ExpectedOutput = l.ToArray();
         return data;
+    }
+
+    private static void AddSetupMethod(AppProgTestData data, List<string> l)
+    {
+        l.Add("SetConfig");
+        l.Add("SetAppRunner");
+        if (data.ConfigOk == false)
+            l.Add("AppRunner on default settings");
+        if (data.ConfigOk && data.UseRepl)
+            l.Add("REPL mode on");
     }
 
     private static void GetCommandDotNetDefaultText(List<string> l)
