@@ -1,41 +1,35 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-    <PackageReference Include="Moq" Version="4.17.2" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.1.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
-    <ProjectReference Include="..\CommandDotNet.Test.Helper\CommandDotNet.Test.Helper.csproj" />
-  </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.0-preview-20220612-01"/>
+		<PackageReference Include="Moq" Version="4.18.1"/>
+		<PackageReference Include="xunit" Version="2.4.2-pre.12"/>
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="coverlet.collector" Version="3.1.2">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj"/>
+		<ProjectReference Include="..\CommandDotNet.Test.Helper\CommandDotNet.Test.Helper.csproj"/>
+	</ItemGroup>
 	<ItemGroup>
 		<Reference Include="CLIHelper">
 			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
 		</Reference>
-    <Reference Include="Config.Wrapper">
+		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
-    <Reference Include="Serilog.Wrapper">
+		<Reference Include="Serilog.Wrapper">
 			<HintPath>..\..\serilog-wrapper\Serilog.Wrapper\bin\Debug\net6.0\Serilog.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-  
 </Project>

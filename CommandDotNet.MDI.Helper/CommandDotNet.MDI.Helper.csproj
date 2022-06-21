@@ -1,20 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-
-  	<ItemGroup>
-		<PackageReference Include="CommandDotNet.IoC.MicrosoftDependencyInjection" Version="4.0.1" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-	</ItemGroup>
-
 	<ItemGroup>
-		<ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj" />
+		<PackageReference Include="CommandDotNet.IoC.MicrosoftDependencyInjection" Version="4.0.1"/>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.5.22301.12"/>
 	</ItemGroup>
-
+	<ItemGroup>
+		<ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj"/>
+	</ItemGroup>
 	<!--CommandDotNet Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="CommandDotNet">
@@ -24,8 +20,7 @@
 			<HintPath>..\..\commanddotnet\CommandDotNet.IoC.MicrosoftDependencyInjection\bin\Debug\net5.0\CommandDotNet.IoC.MicrosoftDependencyInjection.dll</HintPath>
 		</Reference>
 	</ItemGroup>  -->
-
-  	<!--Debug refs-->
+	<!--Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="DIHelper">
         	<HintPath>..\..\di-helper\DIHelper\bin\Debug\net6.0\DIHelper.dll</HintPath>
@@ -34,12 +29,11 @@
 			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>  -->
-
 	<!--Realese refs-->
-  	<ItemGroup>
-	  	<Reference Include="DIHelper">
-        	<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
-      	</Reference>
+	<ItemGroup>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
