@@ -6,7 +6,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="CommandDotNet.IoC.MicrosoftDependencyInjection" Version="4.0.1"/>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.5.22301.12"/>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\CommandDotNet.Helper\CommandDotNet.Helper.csproj"/>

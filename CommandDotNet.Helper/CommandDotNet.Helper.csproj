@@ -1,18 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
-  	<ItemGroup>
-		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
-		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
-		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
-		<PackageReference Include="Serilog" Version="2.10.0" />
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl"/>
+		<PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3"/>
+		<PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1"/>
+		<PackageReference Include="Serilog" Version="2.11.0"/>
 	</ItemGroup>
-
 	<!--CommandDotNet Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="CommandDotNet">
@@ -25,7 +22,6 @@
 			<HintPath>..\..\commanddotnet\CommandDotNet.NameCasing\bin\Debug\net5.0\CommandDotNet.NameCasing.dll</HintPath>
 		</Reference>
 	</ItemGroup>  -->
-
 	<!--Debug refs-->
 	<!-- <ItemGroup>
 		<Reference Include="DIHelper">
@@ -35,15 +31,13 @@
 			<HintPath>..\..\config-wrapper\Config.Wrapper\bin\Debug\net6.0\Config.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>  -->
-
 	<!--Realese refs-->
-  	<ItemGroup>
-	  	<Reference Include="DIHelper">
+	<ItemGroup>
+		<Reference Include="DIHelper">
 			<HintPath>..\..\..\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
 		</Reference>
 		<Reference Include="Config.Wrapper">
 			<HintPath>..\..\..\Build\config-wrapper\Config.Wrapper\Config.Wrapper.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-
 </Project>
