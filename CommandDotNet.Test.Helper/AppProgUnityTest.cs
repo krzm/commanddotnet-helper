@@ -21,7 +21,9 @@ public class AppProgUnityTest<TRootCommand>
     {
         Log.Information("Run in test mode");
         AppRunnerResult = AppRunner.RunInMem(args);
-        Log.Information(AppRunnerResult.Console.AllText());
+        var text = AppRunnerResult.Console.AllText();
+        ArgumentNullException.ThrowIfNull(text);
+        Log.Information(text);
         return AppRunnerResult.ExitCode;
     }
 }
